@@ -44,7 +44,7 @@ void init_hardware() {
 }
 
 void shotBall(bool status, int speed) {
-  int pwm = map(speed, -1666, 1666, 0, 255);
+  // int pwm = map(speed, -1666, 1666, 0, 255);
   analogWrite(RPWM, LOW);  //HIGH or LOW
   if (status) {
     digitalWrite(R_EN, HIGH);  //Low for close
@@ -53,7 +53,7 @@ void shotBall(bool status, int speed) {
     digitalWrite(R_EN, LOW);  //Low for close
     digitalWrite(L_EN, LOW);  //Low for close
   }
-  analogWrite(LPWM, pwm);  //0-255
+  analogWrite(LPWM, speed);  //0-255
 }
 
 //==============================================================================================
