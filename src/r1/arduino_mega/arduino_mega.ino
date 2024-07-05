@@ -128,7 +128,11 @@ void manualMode(){
     delay(500);
     digitalWrite(plant, 1);
     buttonA = true;
-  } else if (data.ch[4] < 0 && data.ch[4] > -1700) {
+  } else if (data.ch[4] < 0 && data.ch[4] > -1700 && buttonA) {
+    digitalWrite(grip1, 1);
+    digitalWrite(grip2, 1);
+    delay(500);
+    digitalWrite(plant, 1);
     buttonA = false;
   }
 
