@@ -64,21 +64,21 @@ void setup() {
 }
 
 void loop() {
+  readSbus();
   gun.runSpeed();
-  // readSbus();
-  // // readSerial();
-  // // runto(10000, 0, 0);
-  // // Switch G
-  // if (data.ch[10] > 0 && data.ch[10] < 1700) {
-  //   manualMode();
-  // } else if(data.ch[10] < 0 && data.ch[10] > -1700) {
-  //   pos_run(vx, vy, w);
-  // } else {
-  //   if (isMidG == false) {
-  //     isMidG = true;
-  //     remoteControl(0, 0, 0);
-  //   }
-  // }
+  // readSerial();
+  // runto(10000, 0, 0);
+  // Switch G
+  if (data.ch[10] > 0 && data.ch[10] < 1700) {
+    manualMode();
+  } else if(data.ch[10] < 0 && data.ch[10] > -1700) {
+    pos_run(vx, vy, w);
+  } else {
+    if (isMidG == false) {
+      isMidG = true;
+      remoteControl(0, 0, 0);
+    }
+  }
 }
 //=============================================================================================
 // void runto(long xx, long yy, long zz){
