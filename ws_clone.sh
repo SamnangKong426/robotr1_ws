@@ -1,7 +1,7 @@
 cd ~
-rm -rf ~/r1_ws
+rm -rf ~/robotr1_ws
 git clone https://github.com/SamnangKong426/robotr1_ws.git
-cd ~/r1_ws
+cd ~/robotr1_ws
 rm -rf build/ log/ install/
 
 # colcon build
