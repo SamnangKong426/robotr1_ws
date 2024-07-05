@@ -163,16 +163,23 @@ void manualMode(){
     // debug.println("Button B off");
   }
 
-  if (data.ch[6] > 0 && data.ch[6] < 1700 && !buttonC) {
-    digitalWrite(grap, 1);
-    delay(500);
+
+  if (data.ch[9] > 0 && data.ch[9] < 1700) {
+      digitalWrite(grap, 1);
+      //Button C
+      if (data.ch[6] > 0 && data.ch[6] < 1700 && !buttonC) {
+        digitalWrite(grap, 0);
+        delay(500);
+        digitalWrite(grap, 1);
+        buttonC = true;
+        } else if(data.ch[6] < 0 && data.ch[6] > -1700 && buttonC){
+        digitalWrite(grap, 0);
+        delay(500);
+          digitalWrite(grap, 1);
+        buttonC = false;
+      }
+    } else if(data.ch[9] < 0 && data.ch[9] > -1700){
       digitalWrite(grap, 0);
-    buttonC = true;
-    } else if(data.ch[6] < 0 && data.ch[6] > -1700 && buttonC){
-    digitalWrite(grap, 1);
-    delay(500);
-      digitalWrite(grap, 0);
-    buttonC = false;
   }
 
   //   buttonC = true;
