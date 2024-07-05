@@ -80,14 +80,14 @@ void loop() {
   }
 }
 //=============================================================================================
-void runto(long xx, long yy, long zz){
-  long pos[3];
-  pos[0] = xx;
-  pos[1] = yy;
-  pos[2] = zz;
-  gunStepper.moveTo(pos);
-  gunStepper.runSpeedToPosition();
-}
+// void runto(long xx, long yy, long zz){
+//   long pos[3];
+//   pos[0] = xx;
+//   pos[1] = yy;
+//   pos[2] = zz;
+//   gunStepper.moveTo(pos);
+//   gunStepper.runSpeedToPosition();
+// }
 
 void manualMode(){
   // Joystick X1 Y1 X2
