@@ -64,8 +64,6 @@ void setup() {
 void loop() {
   readSbus();
   readSerial();
-  debug.println(digitalRead(sensor1));
-  debug.println(digitalRead(sensor2));
   // Switch G
   if (data.ch[10] > 0 && data.ch[10] < -1700) {
     // gun.runSpeed();
