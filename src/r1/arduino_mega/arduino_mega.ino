@@ -167,7 +167,8 @@ void manualMode(){
   //Switch F
   if (data.ch[9] > 0 && data.ch[9] < 1700) {
       digitalWrite(grap, 1);
-
+      digitalWrite(relay, 1);
+      shotBall(true, 100);
       //Button C
       if (data.ch[6] > 0 && data.ch[6] < 1700 && !buttonC) {
         digitalWrite(grap, 0);
@@ -182,6 +183,8 @@ void manualMode(){
       }
     } else if(data.ch[9] < 0 && data.ch[9] > -1700){
       digitalWrite(grap, 0);
+      digitalWrite(relay, 0);
+      shotBall(false, 0);
   }
 
   //   buttonC = true;
