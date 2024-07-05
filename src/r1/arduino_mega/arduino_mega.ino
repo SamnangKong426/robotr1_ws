@@ -19,7 +19,7 @@
 #define STEPx 12
 #define EN 38 
 AccelStepper gun(1,STEPx,DIRx); 
-// MultiStepper gunStepper;
+MultiStepper gunStepper;
  
 
 //Sensor
@@ -81,14 +81,14 @@ void loop() {
   }
 }
 //=============================================================================================
-// void runto(long xx, long yy, long zz){
-//   long pos[3];
-//   pos[0] = xx;
-//   pos[1] = yy;
-//   pos[2] = zz;
-//   gunStepper.moveTo(pos);
-//   gunStepper.runSpeedToPosition();
-// }
+void runto(long xx, long yy, long zz){
+  long pos[3];
+  pos[0] = xx;
+  pos[1] = yy;
+  pos[2] = zz;
+  gunStepper.moveTo(pos);
+  gunStepper.runSpeedToPosition();
+}
 
 void manualMode(){
   // Joystick X1 Y1 X2
@@ -103,7 +103,7 @@ void manualMode(){
     }
     // gun.runSpeed();
     // gun.setSpeed(1000);
-    // gun.runSpeed();
+    gun.runSpeed();
     debug.println("1200");
   } else if (data.ch[3] < 0 && data.ch[3] > -1700) {
     if (gun_status == false){
@@ -112,7 +112,7 @@ void manualMode(){
       runto(gun_ang, 0, 0);
       // gun.setSpeed(-1200);
     }
-    // gun.runSpeed();
+    gun.runSpeed();
     debug.println("-1200");
   } else {
     gun_status = false;
