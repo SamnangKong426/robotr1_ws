@@ -91,7 +91,6 @@ void loop() {
 
 void manualMode(){
   // Joystick X1 Y1 X2
-  if (data.ch[])
   remoteControl(data.ch[1], data.ch[0], data.ch[2]);
   //Joystick Y2
   // if (data.ch[3] > 0 && data.ch[3] < 1700) {
