@@ -96,10 +96,10 @@ void manualMode(){
   //Joystick Y2
   if (data.ch[3] > 0 && data.ch[3] < 1700) {
     if (gun_status == false){
-      // gun_ang += 1000;
+      gun_ang += 1000;
       gun_status = true;
-      // runto(gun_ang, 0, 0);
-       gun.setSpeed(1200);
+      runto(gun_ang, 0, 0);
+      //  gun.setSpeed(1200);
     }
     // gun.runSpeed();
     // gun.setSpeed(1000);
@@ -107,10 +107,10 @@ void manualMode(){
     debug.println("1200");
   } else if (data.ch[3] < 0 && data.ch[3] > -1700) {
     if (gun_status == false){
-      // gun_ang -= 1000;
+      gun_ang -= 1000;
       gun_status = true;
-      // runto(gun_ang, 0, 0);
-      gun.setSpeed(-1200);
+      runto(gun_ang, 0, 0);
+      // gun.setSpeed(-1200);
     }
     // gun.runSpeed();
     debug.println("-1200");
