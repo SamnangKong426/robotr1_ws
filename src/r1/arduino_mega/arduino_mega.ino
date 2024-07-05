@@ -101,7 +101,7 @@ void manualMode(){
       // runto(gun_ang, 0, 0);
        gun.setSpeed(1200);
     }
-    gun.runSpeed();
+    // gun.runSpeed();
     // gun.setSpeed(1000);
     // gun.runSpeed();
     debug.println("1200");
@@ -112,7 +112,7 @@ void manualMode(){
       // runto(gun_ang, 0, 0);
       gun.setSpeed(-1200);
     }
-    gun.runSpeed();
+    // gun.runSpeed();
     debug.println("-1200");
   } else {
     gun_status = false;
