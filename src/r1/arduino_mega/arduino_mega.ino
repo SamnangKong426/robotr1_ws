@@ -151,7 +151,11 @@ void manualMode(){
     debug.println("up");
     buttonB = true;
     debug.println("Button B on");
-  } else if (data.ch[5] < 0 && data.ch[5] > -1700) {
+  } else if (data.ch[5] < 0 && data.ch[5] > -1700 && buttonB) {
+    debug.println("Button C on");
+    digitalWrite(plant, 0);
+    delay(50);
+    digitalWrite(grip2, 0);
     buttonB = false;
     // debug.println("Button B off");
   }
