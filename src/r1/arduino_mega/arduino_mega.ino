@@ -134,6 +134,10 @@ void manualMode(){
     delay(500);
     digitalWrite(plant, 1);
     buttonA = false;
+  } else if (data.ch[4] == 0) {
+    digitalWrite(grip1, 0);
+    digitalWrite(grip2, 0);
+    digitalWrite(plant, 0);
   }
 
   // Button B
