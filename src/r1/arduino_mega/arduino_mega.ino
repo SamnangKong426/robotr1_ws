@@ -168,7 +168,7 @@ void manualMode(){
   if (data.ch[9] > 0 && data.ch[9] < 1700) {
       digitalWrite(grap, 1);
       digitalWrite(relay, 1);
-      shotBall(true, 200);
+      shotBall(true, 150);
       //Button C
       if (data.ch[6] > 0 && data.ch[6] < 1700 && !buttonC) {
         digitalWrite(grap, 0);
