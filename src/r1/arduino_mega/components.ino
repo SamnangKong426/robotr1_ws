@@ -14,11 +14,11 @@ void init_hardware() {
   pinMode(grap, OUTPUT);
   pinMode(grip2, OUTPUT);
   pinMode(EN, OUTPUT);
-  gun.setMaxSpeed(1200);
-  gunStepper.addStepper(gun);
+  // gun.setMaxSpeed(1200);
+  // gunStepper.addStepper(gun);
 
-  // gun.setMaxSpeed(12000);
-  // gun.setAcceleration(12000);
+  gun.setMaxSpeed(1200);
+  gun.setAcceleration(12000);
   // gun.setSpeed(1200);
 
   digitalWrite(grip1, 0);
