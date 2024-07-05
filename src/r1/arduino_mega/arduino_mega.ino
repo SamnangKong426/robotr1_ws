@@ -18,7 +18,7 @@
 #define DIRx 13
 #define STEPx 12
 #define EN 38 
-AccelStepper gun(1,STEPx,DIRx); 
+// AccelStepper gun(1,STEPx,DIRx); 
 // MultiStepper gunStepper;
  
 
@@ -70,7 +70,7 @@ void loop() {
   // runto(10000, 0, 0);
   // Switch G
   if (data.ch[10] > 0 && data.ch[10] < 1700) {
-    gun.runSpeed();
+    // gun.runSpeed();
     manualMode();
   } else if(data.ch[10] < 0 && data.ch[10] > -1700) {
     pos_run(vx, vy, w);
@@ -95,31 +95,31 @@ void manualMode(){
   // Joystick X1 Y1 X2
   remoteControl(data.ch[1], data.ch[0], data.ch[2]);
   //Joystick Y2
-  if (data.ch[3] > 0 && data.ch[3] < 1700) {
-    // if (gun_status == false){
-      // gun_ang += 1000;
-      // gun_status = true;
-      // runto(gun_ang, 0, 0);
-       gun.setSpeed(1200);
-    // }
-    // gun.runSpeed();
-    // gun.setSpeed(1000);
-    // gun.runSpeed();
-    debug.println("1200");
-  } else if (data.ch[3] < 0 && data.ch[3] > -1700) {
-    // if (gun_status == false){
-      // gun_ang -= 1000;
-      // gun_status = true;
-      // runto(gun_ang, 0, 0);
-      gun.setSpeed(-1200);
-    // }
-    gun.runSpeed();
-    debug.println("-1200");
-  } else {
-    gun_status = false;
-    gun.stop();
-    // gun.setSpeed(0);
-  }
+  // if (data.ch[3] > 0 && data.ch[3] < 1700) {
+  //   // if (gun_status == false){
+  //     // gun_ang += 1000;
+  //     // gun_status = true;
+  //     // runto(gun_ang, 0, 0);
+  //     //  gun.setSpeed(1200);
+  //   // }
+  //   // gun.runSpeed();
+  //   // gun.setSpeed(1000);
+  //   // gun.runSpeed();
+  //   debug.println("1200");
+  // } else if (data.ch[3] < 0 && data.ch[3] > -1700) {
+  //   // if (gun_status == false){
+  //     // gun_ang -= 1000;
+  //     // gun_status = true;
+  //     // runto(gun_ang, 0, 0);
+  //     // gun.setSpeed(-1200);
+  //   // }
+  //   gun.runSpeed();
+  //   debug.println("-1200");
+  // } else {
+  //   gun_status = false;
+  //   gun.stop();
+  //   // gun.setSpeed(0);
+  // }
   // remoteControl(data.ch[0], -data.ch[1], data.ch[2]);
 
   // Button A
@@ -134,21 +134,21 @@ void manualMode(){
     buttonA = false;
   }
 
-  // // Button B
-  // if (data.ch[5] > 0 && data.ch[5] < 1700 && !buttonB) {
-  //   debug.println("down");
-  //   digitalWrite(plant, 0);
-  //   delay(500);
-  //   digitalWrite(grip1, 0);
-  //   delay(1000);
-  //   digitalWrite(plant, 1);
-  //   debug.println("up");
-  //   buttonB = true;
-  //   debug.println("Button B on");
-  // } else if (data.ch[5] < 0 && data.ch[5] > -1700) {
-  //   buttonB = false;
-  //   // debug.println("Button B off");
-  // }
+  // Button B
+  if (data.ch[5] > 0 && data.ch[5] < 1700 && !buttonB) {
+    debug.println("down");
+    digitalWrite(plant, 0);
+    delay(500);
+    digitalWrite(grip1, 0);
+    delay(1000);
+    digitalWrite(plant, 1);
+    debug.println("up");
+    buttonB = true;
+    debug.println("Button B on");
+  } else if (data.ch[5] < 0 && data.ch[5] > -1700) {
+    buttonB = false;
+    // debug.println("Button B off");
+  }
 
   // // Button C
   // if (data.ch[6] > 0 && data.ch[6] < 1700 && !buttonC) {
