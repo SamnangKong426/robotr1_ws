@@ -65,7 +65,7 @@ void setup() {
 
 void loop() {
   readSbus();
-  gun.runSpeed();
+  // gun.runSpeed();
   // readSerial();
   // runto(10000, 0, 0);
   // Switch G
@@ -93,6 +93,7 @@ void loop() {
 void manualMode(){
   // Joystick X1 Y1 X2
   remoteControl(data.ch[1], data.ch[0], data.ch[2]);
+  gun.runSpeed();
   //Joystick Y2
   if (data.ch[3] > 0 && data.ch[3] < 1700) {
     // if (gun_status == false){
@@ -101,7 +102,7 @@ void manualMode(){
       // runto(gun_ang, 0, 0);
        gun.setSpeed(1200);
     // }
-    gun.runSpeed();
+    // gun.runSpeed();
     // gun.setSpeed(1000);
     // gun.runSpeed();
     debug.println("1200");
