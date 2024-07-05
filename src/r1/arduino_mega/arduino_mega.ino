@@ -65,12 +65,12 @@ void setup() {
 
 void loop() {
   readSbus();
-  gun.runSpeed();
   // gun.runSpeed();
   // readSerial();
   // runto(10000, 0, 0);
   // Switch G
   if (data.ch[10] > 0 && data.ch[10] < 1700) {
+    gun.runSpeed();
     manualMode();
   } else if(data.ch[10] < 0 && data.ch[10] > -1700) {
     pos_run(vx, vy, w);
