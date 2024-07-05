@@ -91,6 +91,7 @@ void loop() {
 
 void manualMode(){
   // Joystick X1 Y1 X2
+  if (data.ch[])
   remoteControl(data.ch[1], data.ch[0], data.ch[2]);
   //Joystick Y2
   // if (data.ch[3] > 0 && data.ch[3] < 1700) {
@@ -122,7 +123,7 @@ void manualMode(){
 
   // Button A
   if (data.ch[4] > 0 && data.ch[4] < 1700 && !buttonA) {
-    debug.println("Button A on");
+    // debug.println("Button A on");
     digitalWrite(grip1, 1);
     digitalWrite(grip2, 1);
     delay(500);
@@ -142,19 +143,19 @@ void manualMode(){
 
   // Button B
   if (data.ch[5] > 0 && data.ch[5] < 1700 && !buttonB) {
-    debug.println("down");
+    // debug.println("down");
     digitalWrite(plant, 0);
     delay(500);
     digitalWrite(grip1, 0);
     delay(1000);
     digitalWrite(plant, 1);
-    debug.println("up");
+    // debug.println("up");
     buttonB = true;
-    debug.println("Button B on");
+    // debug.println("Button B on");
   } else if (data.ch[5] < 0 && data.ch[5] > -1700 && buttonB) {
-    debug.println("Button C on");
+    // debug.println("Button C on");
     digitalWrite(plant, 0);
-    delay(50);
+    delay(500);
     digitalWrite(grip2, 0);
     buttonB = false;
     // debug.println("Button B off");
