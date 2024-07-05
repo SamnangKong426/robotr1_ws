@@ -96,7 +96,7 @@ void manualMode(){
   if (data.ch[3] > 0 && data.ch[3] < 1700) {
     if (gun_status == false){
       // gun_ang += 1000;
-      // gun_status = true;
+      gun_status = true;
       // runto(gun_ang, 0, 0);
        gun.setSpeed(1200);
     }
@@ -107,7 +107,7 @@ void manualMode(){
   } else if (data.ch[3] < 0 && data.ch[3] > -1700) {
     if (gun_status == false){
       // gun_ang -= 1000;
-      // gun_status = true;
+      gun_status = true;
       // runto(gun_ang, 0, 0);
       gun.setSpeed(-1200);
     }
