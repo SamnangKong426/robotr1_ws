@@ -19,6 +19,7 @@ void init_hardware() {
 
   gun.setMaxSpeed(12000);
   gun.setAcceleration(12000);
+  gun.setSpeed(1200);
 
   digitalWrite(grip1, 0);
   digitalWrite(plant, 0);
