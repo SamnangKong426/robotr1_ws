@@ -166,8 +166,12 @@ void manualMode(){
   // Button C
   if (data.ch[6] > 0 && data.ch[6] < 1700 && !buttonC) {
     digitalWrite(grap, 1);
+    delay(500);
+      digitalWrite(grap, 0);
     buttonC = true;
     } else if(data.ch[6] < 0 && data.ch[6] > -1700 && buttonC){
+    digitalWrite(grap, 1);
+    delay(500);
       digitalWrite(grap, 0);
     buttonC = false;
   }
