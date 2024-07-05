@@ -64,6 +64,7 @@ void setup() {
 }
 
 void loop() {
+  gun.runSpeed();
   readSbus();
   readSerial();
   // runto(10000, 0, 0);
