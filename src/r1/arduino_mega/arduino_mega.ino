@@ -24,9 +24,7 @@
 
 //Sensor
 #define sensor1 36
-#define sensor2 37  // front left
-#define sensor3 40
-#define sensor4 41  //front right
+#define sensor2 37  // sensor seedling
 
 //Shot ball Motor
 #define R_EN 44
@@ -66,6 +64,8 @@ void setup() {
 void loop() {
   readSbus();
   readSerial();
+  debug.println(digitalRead(sensor1));
+  debug.println(digitalRead(sensor2));
   // Switch G
   if (data.ch[10] > 0 && data.ch[10] < 1700) {
     // gun.runSpeed();
@@ -91,6 +91,7 @@ void loop() {
 
 void manualMode(){
   // Joystick X1 Y1 X2
+  // Button D
   if (data.ch[7] > 0 && data.ch[7] < 1700) {
     remoteControl(data.ch[1], data.ch[0], data.ch[2]);
   } else if (data.ch[7] < 0 && data.ch[7] > -1700) {
