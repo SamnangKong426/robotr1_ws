@@ -116,7 +116,7 @@ void manualMode(){
     debug.println("-1200");
   } else {
     gun_status = false;
-    gun.setSpeed(0);
+    // gun.setSpeed(0);
   }
   // remoteControl(data.ch[0], -data.ch[1], data.ch[2]);
 
