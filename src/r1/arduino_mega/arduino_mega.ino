@@ -67,14 +67,15 @@ void loop() {
   // Switch G
   if (data.ch[10] > 0 && data.ch[10] < 1700) {
     // gun.runSpeed();
-    manualMode();
-  } else if(data.ch[10] < 0 && data.ch[10] > -1700) {
-    pos_run(vx, vy, w);
-  } else {
     if (isMidG == false) {
       isMidG = true;
       remoteControl(0, 0, 0);
     }
+  } else if(data.ch[10] < 0 && data.ch[10] > -1700) {
+    pos_run(vx, vy, w);
+  } else {
+    
+    manualMode();
   }
 }
 //=============================================================================================
@@ -163,9 +164,10 @@ void manualMode(){
     // debug.println("Button B off");
   }
 
-
+  //Switch F
   if (data.ch[9] > 0 && data.ch[9] < 1700) {
       digitalWrite(grap, 1);
+
       //Button C
       if (data.ch[6] > 0 && data.ch[6] < 1700 && !buttonC) {
         digitalWrite(grap, 0);
