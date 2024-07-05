@@ -66,7 +66,7 @@ void setup() {
 void loop() {
   //gun.runSpeed();
   readSbus();
-  readSerial();
+  // readSerial();
   // runto(10000, 0, 0);
   // Switch G
   if (data.ch[10] > 0 && data.ch[10] < 1700) {
