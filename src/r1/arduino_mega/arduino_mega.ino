@@ -91,7 +91,11 @@ void loop() {
 
 void manualMode(){
   // Joystick X1 Y1 X2
-  remoteControl(data.ch[1], data.ch[0], data.ch[2]);
+  if (data.ch[7] > 0 && data.ch[7] < 1700) {
+    remoteControl(data.ch[1], data.ch[0], data.ch[2]);
+  } else if (data.ch[7] < 0 && data.ch[7] > -1700) {
+    remoteControl(data.ch[0], -data.ch[1], data.ch[2]);
+  }
   //Joystick Y2
   // if (data.ch[3] > 0 && data.ch[3] < 1700) {
   //   // if (gun_status == false){
