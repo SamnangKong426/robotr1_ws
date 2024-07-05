@@ -17,8 +17,8 @@ void init_hardware() {
   // gun.setMaxSpeed(1200);
   // gunStepper.addStepper(gun);
 
-  gun.setMaxSpeed(1200);
-  gun.setAcceleration(100);
+  gun.setMaxSpeed(12000);
+  gun.setAcceleration(12000);
 
   digitalWrite(grip1, 0);
   digitalWrite(plant, 0);
