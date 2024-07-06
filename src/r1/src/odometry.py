@@ -82,11 +82,11 @@ class OdometryNode(Node):
         orientation = self.poseStamped_msg.pose.orientation
         # covert m to mm
         _, _, yaw = self.quaternion_to_rpy(orientation.x, orientation.y, orientation.z, orientation.w)
-        offsetX = 0.325 * m.cos(m.radians(yaw))
-        offsetY = 0.325 * m.sin(m.radians(yaw))
+        # offsetX = 0.325 * m.cos(m.radians(yaw))
+        # offsetY = 0.325 * m.sin(m.radians(yaw))
 
-        position.z += offsetX
-        position.x += offsetY
+        # position.z += offsetX
+        # position.x += offsetY
 
         pos_x = position.z * 1000
         pos_y = position.x * 1000
