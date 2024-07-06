@@ -74,7 +74,6 @@ void loop() {
   } else if(data.ch[10] < 0 && data.ch[10] > -1700) {
     pos_run(vx, vy, w);
   } else {
-    
     manualMode();
   }
 }
